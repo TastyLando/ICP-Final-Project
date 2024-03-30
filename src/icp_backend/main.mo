@@ -23,7 +23,7 @@ actor {
     bloodGroup : Text;
   };
   private stable var person : Trie.Trie<DonaterId, PersonNeed> = Trie.empty();
-  var personsNeed : [PersonNeed] = [];
+ 
   var persons : [Person] = [];
 
   type DonatedBlood = {
@@ -45,23 +45,19 @@ actor {
 
   var needRequests : [NeedRequest] = [];
 
-public func createDonationRequest(person: Person): async Bool  {
-  let ?foundPerson = Array.find(persons, func(p: Person): Bool {
-    return p.id == person.id;
-  });
-  
-  if ( foundPerson.hasContagiousDisease) {
-    return false; // bulaşıcı hastalığı var
+public func createDonationRequest(person: Person): async Text  {
+  if ( person.hasContagiousDisease) {
+    return "Üzgünüz kan veremezsiniz";
   } else {
     let newRequestId = Array.size(needRequests) + 1;
-    return true; // işlem başarılı
+    return "Kan verebilirsiniz."; // işlem başarılı
   }
     };
   
-  public func youNeedBlood(personNeed: PersonNeed): async Bool   {
+  public func youNeedBlood(personNeed: PersonNeed, person : Person): async Bool   {
    
   
-  if (personNeed.bloodGroup == "A" or personNeed.bloodGroup == "AB") {
+  if (person.bloodGroup == personNeed.bloodGroup) {
     return true; // Kan grubu A veya AB ise, işlem başarılı
   } else {
     return false; // Diğer durumlarda işlem başarısız
