@@ -1,4 +1,4 @@
-# icp final project
+# ICP FINAL PROJECT
 This code contains an actor simulating a blood donation system. Its functionality consists of the following components:
 
 Person (Kişi) and PersonNeed (Kişi İhtiyacı) Types: Represent data structures for individuals who can donate blood and those who need blood donations, respectively. These structures include fields such as the person's ID, name, city of residence, blood group, and eligibility to donate.
