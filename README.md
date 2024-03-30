@@ -1,4 +1,29 @@
 # icp final project
+This code contains an actor simulating a blood donation system. Its functionality consists of the following components:
+
+Person (Kişi) and PersonNeed (Kişi İhtiyacı) Types: Represent data structures for individuals who can donate blood and those who need blood donations, respectively. These structures include fields such as the person's ID, name, city of residence, blood group, and eligibility to donate.
+
+DonatedBlood (Bağışlanan Kan) Type: This data structure is used for blood donations. It includes fields for the donor's ID, blood group, amount donated, and whether the donation has been delivered.
+
+NeedRequest (İhtiyaç Talebi) Type: Represents requests made by individuals in need of blood. Each request includes a request ID, requester's ID, required blood group, and the ID of a potential donor to fulfill the request.
+
+Functions:
+
+# createDonationRequest: 
+Enables an individual to make a blood donation request. If the person has a contagious disease, the request is rejected.
+# youNeedBlood: 
+Checks whether an individual needs blood.
+# fulfillNeedRequest: 
+Facilitates the fulfillment of a blood donation request by a donor.
+# canFulfillNeedRequest: 
+Checks whether a specified donor can fulfill a particular blood donation request.
+# Data Structures:
+
+personsNeed: List of individuals in need of blood.
+persons: List of individuals capable of donating blood.
+donatedBloods: List of blood donations made.
+needRequests: List of blood donation requests.
+The purpose of this code is to define and manage the basic functionalities and data structures of a blood donation system. The code can be used to process blood donation requests, find potential donors, and track blood donations.
 
 
 If you want to start working on your project right away, you might want to try the following commands:
